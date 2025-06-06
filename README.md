@@ -144,7 +144,7 @@ python dataset/yolo2coco.py --image_path dataset/images/test --label_path datase
 
 ## 🎓 模型训练
 
-### 训练 LRS-DETR-B（基础版本）(train.py)
+### 训练 LRS-DETR-B（基础版本）（train.py）
 
 ```python
 import warnings, os
@@ -168,7 +168,7 @@ model.train(
 )
 ```
 
-### 获得 LRS-DETR-T（轻量化版本）(train.py)
+### 获得 LRS-DETR-T（轻量化版本）（train.py）
 
 LRS-DETR-T 通过两步获得：
 1. 先训练 LRS-DETR-B 基础模型
@@ -225,7 +225,7 @@ model.train(
 
 ## 📈 模型评估
 
-### 基础评估(val.py)
+### 基础评估（val.py）
 ```python
 from ultralytics import RTDETR
 
@@ -244,7 +244,7 @@ model.val(
 )
 ```
 
-### 计算COCO指标(get_COCO_metrics.py)
+### 计算COCO指标（get_COCO_metrics.py）
 ```bash
 # 1. 首先进行验证并保存json结果
 python val.py 
@@ -258,7 +258,7 @@ python get_COCO_metrics.py --pred_json runs/val/exp/predictions.json --anno_json
 
 ### 模型性能分析
 
-#### 查看模型信息(main_profile.py)
+#### 查看模型信息（main_profile.py）
 ```python
 from ultralytics import RTDETR
 
@@ -273,13 +273,13 @@ model.fuse()
 model.info(detailed=False)
 ```
 
-#### 计算FPS和延迟(get_FPS.py)
+#### 计算FPS和延迟（get_FPS.py）
 ```bash
 # 测试推理速度
 python get_FPS.py --weights runs/train/lrs-detr-b/weights/best.pt 
 ```
 
-#### 生成热力图(heatmap.py)
+#### 生成热力图（heatmap.py）
 ```bash
 # 可视化模型关注区域
 python heatmap.py --weights runs/train/lrs-detr-b/weights/best.pt --source dataset/images/test
@@ -287,7 +287,7 @@ python heatmap.py --weights runs/train/lrs-detr-b/weights/best.pt --source datas
 
 ## 🔧 模型压缩
 
-### LAMP剪枝(pruning.py)
+### LAMP剪枝（pruning.py）
 
 ```python
 # 配置剪枝参数
@@ -318,7 +318,7 @@ param_dict = {
 python pruning.py
 ```
 
-### MLSSD蒸馏(distill.py)
+### MLSSD蒸馏（distill.py）
 
 ```python
 # 配置蒸馏参数
@@ -357,13 +357,13 @@ param_dict = {
 python distill.py
 ```
 
-### 剪枝效果可视化(plot_channel_image.py) (可选)
+### 剪枝效果可视化（plot_channel_image.py） (可选)
 ```bash
 # 对比剪枝前后的通道数变化
 python plot_channel_image.py --base-weights base_weights.pt --prune-weights prune_weights.pt
 ```
 
-## 📦 模型导出(export.py) (可选)
+## 📦 模型导出（export.py） (可选)
 
 ```python
 from ultralytics import RTDETR
