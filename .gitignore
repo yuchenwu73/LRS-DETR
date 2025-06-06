@@ -1,0 +1,66 @@
+# 排除数据集目录中的图片和标注文件，但保留目录结构
+/dataset/images/*
+/dataset/labels/*
+!/dataset/images/.gitkeep
+!/dataset/labels/.gitkeep
+!/dataset/images/*/
+!/dataset/labels/*/
+/dataset/images/*/*
+/dataset/labels/*/*
+!/dataset/images/*/.gitkeep
+!/dataset/labels/*/.gitkeep
+
+# 排除VOCdevkit中的文件但保留目录结构
+/dataset/VOCdevkit/*
+!/dataset/VOCdevkit/.gitkeep
+!/dataset/VOCdevkit/*/
+/dataset/VOCdevkit/*/*
+!/dataset/VOCdevkit/*/.gitkeep
+
+# 不排除缓存文件
+!/dataset/labels/*.cache
+
+# 不排除 dataset 目录本身和其中的脚本、配置文件
+!/dataset/
+!/dataset/*.py
+!/dataset/*.yaml
+!/dataset/*.json
+
+# 排除运行结果和缓存
+/runs/
+runs/
+*.pth
+*.pt
+*.onnx
+*.engine
+*.trt
+
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.ipynb_checkpoints
+
+# 系统文件
+.DS_Store
+Thumbs.db
+.directory
+
+# IDE和编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+logs/ 
